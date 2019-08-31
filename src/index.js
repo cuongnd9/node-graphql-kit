@@ -1,31 +1,21 @@
 import dotenv from 'dotenv';
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import logger from 'morgan';
+import { GraphQLServer } from 'graphql-yoga';
+import schema from './graphql';
 
+// Config env.
 dotenv.config();
 
-// Port.
-const port = process.env.PORT || 9000;
+// Initialize graphql server.
+const server = new GraphQLServer({ schema });
 
-// Initialize app.
-const app = express();
-
-// Log request to the console.
-app.use(logger('dev'));
-
-// Body parser.
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Enable cors.
-app.use(cors());
-
-// Routes.
-app.get('/', (req, res) => res.send('<p>👋 Xin chào</p>'));
+// Graphql options.
+const options = {
+  port: process.env.PORT || 9000
+};
 
 // Start server.
-app.listen(port, () => {
-  console.log(`Server started on http://localhost:${port}`);
-});
+server.start(options, () =>
+  console.log(
+    `Server is running on http://localhost:${options.port}`
+  )
+);
