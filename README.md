@@ -1,10 +1,10 @@
-# node-boilerplate
+# node-graphql-boilerplate
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
-[![Hits-of-Code](https://hitsofcode.com/github/cuongw/node-boilerplate)](https://hitsofcode.com/view/github/cuongw/node-boilerplate)
-[![GitHub](https://img.shields.io/github/license/cuongw/node-boilerplate.svg)](https://github.com/cuongw/node-boilerplate/blob/master/LICENSE)
+[![Hits-of-Code](https://hitsofcode.com/github/cuongw/node-graphql-boilerplate)](https://hitsofcode.com/view/github/cuongw/node-graphql-boilerplate)
+[![GitHub](https://img.shields.io/github/license/cuongw/node-graphql-boilerplate.svg)](https://github.com/cuongw/node-graphql-boilerplate/blob/master/LICENSE)
 
-> 🌏🚀 A Node.js boilerplate with RESTful, GraphQL, ES6, Prisma, PostgreSQL, MongoDB and awesome tools.
+> 🧘🚀 A Node.js boilerplate with GraphQL, Prisma, PostgreSQL, MongoDB and awesome tools.
 
 ## Prepare
 
@@ -17,8 +17,8 @@
 ### Step 1: Clone this project and remove `.git` folder
 
 ```sh
-$ git clone https://github.com/cuongw/node-boilerplate.git
-$ cd node-rest-boilerplate && rm -rf .git
+$ git clone https://github.com/cuongw/node-graphql-boilerplate.git
+$ cd node-graphql-boilerplate && rm -rf .git
 ```
 
 ### Step 2: Launch Prisma and the connected database

@@ -3,7 +3,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import logger from 'morgan';
-import apiRoute from './routes';
 
 dotenv.config();
 
@@ -25,7 +24,6 @@ app.use(cors());
 
 // Routes.
 app.get('/', (req, res) => res.send('<p>👋 Xin chào</p>'));
-app.use('/api', apiRoute);
 
 // Start server.
 app.listen(port, () => {
