@@ -1,15 +1,15 @@
 {
-  "name": "node-boilerplate",
+  "name": "node-graphql-boilerplate",
   "version": "1.0.0",
-  "description": "🌏🚀 A Node.js boilerplate with RESTful, GraphQL, ES6, PostgreSQL, MongoDB and awesome tools.",
+  "description": "🧘🚀 A Node.js boilerplate with GraphQL, Prisma, PostgreSQL, MongoDB and awesome tools.",
   "main": "src/index.js",
-  "repository": "git@github.com:cuongw/node-rest-boilerplate.git",
+  "repository": "git@github.com:cuongw/node-graphql-boilerplate.git",
   "author": "Nguyen Duy Cuong <cuongw.me@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "deploy": "prisma deploy",
-    "deploy:force": "prisma deploy --force"
+    "deploy": "npx prisma deploy",
+    "deploy:force": "npx prisma deploy --force"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
