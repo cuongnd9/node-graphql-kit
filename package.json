@@ -7,18 +7,15 @@
   "author": "Nguyen Duy Cuong <cuongw.me@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js --exec babel-node",
+    "start": "nodemon --exec babel-node src/index.js",
     "deploy": "prisma deploy",
     "deploy:force": "prisma deploy --force"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.3",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "babel-plugin-root-import": "^6.4.1",
-    "babel-plugin-transform-builtin-extend": "^1.1.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
     "nodemon": "^1.19.1",
     "prisma": "^1.34.8"
   },

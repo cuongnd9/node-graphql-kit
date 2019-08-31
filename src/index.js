@@ -1,9 +1,6 @@
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import { GraphQLServer } from 'graphql-yoga';
 import schema from './graphql';
-
-// Config env.
-dotenv.config();
 
 // Initialize graphql server.
 const server = new GraphQLServer({ schema });
