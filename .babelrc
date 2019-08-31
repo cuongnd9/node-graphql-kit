@@ -1,18 +1,8 @@
 {
   "presets": [
-      [
-          "env", {
-              "targets": {
-                  "node": "current"
-              }
-          }
-      ],
-      "stage-0"
+    "@babel/preset-env"
   ],
   "plugins": [
-      ["babel-plugin-transform-builtin-extend", {
-          "globals": ["Error", "Array"]
-      }],
       [
         "babel-plugin-root-import",
         {
