@@ -6,6 +6,14 @@
 
 > 🧘🚀 A Node.js boilerplate with GraphQL, Prisma, PostgreSQL, MongoDB and awesome tools.
 
+## Features
+
+- ESNext
+- GraphQL
+- Prisma
+- PostgreSQL
+- MongoDB
+
 ## Prepare
 
 - [Node](https://nodejs.org/en/)
