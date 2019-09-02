@@ -1,6 +1,5 @@
 # node-graphql-boilerplate
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
 [![Hits-of-Code](https://hitsofcode.com/github/cuongw/node-graphql-boilerplate)](https://hitsofcode.com/view/github/cuongw/node-graphql-boilerplate)
 [![GitHub](https://img.shields.io/github/license/cuongw/node-graphql-boilerplate.svg)](https://github.com/cuongw/node-graphql-boilerplate/blob/master/LICENSE)
 

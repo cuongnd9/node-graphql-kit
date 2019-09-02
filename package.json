@@ -7,11 +7,33 @@
   "author": "Nguyen Duy Cuong <cuongw.me@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "deploy": "npx prisma deploy",
-    "deploy:force": "npx prisma deploy --force"
+    "start": "node dist/index.js",
+    "start:dev": "nodemon --exec babel-node src/index.js",
+    "deploy": "prisma deploy",
+    "deploy:force": "prisma deploy --force",
+    "clean": "rm -rf dist",
+    "dist": "babel src --out-dir dist",
+    "build": "npm run clean  && npm run dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "pretty-quick — staged",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
@@ -22,7 +44,11 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
     "nodemon": "^1.19.1",
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1",
     "prisma": "^1.34.8"
   },
   "dependencies": {
@@ -31,9 +57,7 @@
     "graphql-tools": "^4.0.5",
     "graphql-yoga": "^1.18.3",
     "lodash": "^4.17.15",
-    "prisma-client-lib": "^1.34.7"
-  },
-  "engines": {
-    "node": ">=8.10.0"
+    "prisma-client-lib": "^1.34.7",
+    "signale": "^1.4.0"
   }
 }
