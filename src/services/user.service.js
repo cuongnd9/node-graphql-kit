@@ -15,7 +15,7 @@ function createUser(data) {
 function updateUser(id, data) {
   return prisma.updateUser({
     where: { id },
-    data
+    data,
   });
 }
 
@@ -28,5 +28,5 @@ export default {
   getUser,
   createUser,
   updateUser,
-  deleteUser
+  deleteUser,
 };
