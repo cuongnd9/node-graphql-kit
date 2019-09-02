@@ -36,6 +36,7 @@
     "fp/no-class": ["warn"],
     "fp/no-get-set": ["warn"],
     "fp/no-loops": ["warn"],
-    "fp/no-this": ["warn"]
+    "fp/no-this": ["warn"],
+    "object-curly-newline": ["off"]
   }
 }
