@@ -40,6 +40,7 @@
     "babel-plugin-root-import": "^6.4.1",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.2.0",

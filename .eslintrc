@@ -2,7 +2,8 @@
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:node/recommended-module"
+    "plugin:node/recommended-module",
+    "prettier"
   ],
   "plugins": ["promise", "fp", "import"],
   "rules": {
@@ -36,7 +37,6 @@
     "fp/no-class": ["warn"],
     "fp/no-get-set": ["warn"],
     "fp/no-loops": ["warn"],
-    "fp/no-this": ["warn"],
-    "object-curly-newline": ["off"]
+    "fp/no-this": ["warn"]
   }
 }
