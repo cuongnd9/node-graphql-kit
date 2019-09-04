@@ -1,5 +1,6 @@
 endpoint: http://localhost:4466
-datamodel: datamodel.prisma
+datamodel:
+  - src/models/user.model.prisma
 hooks:
   post-deploy:
     - prisma generate
