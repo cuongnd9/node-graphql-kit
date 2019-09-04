@@ -23,7 +23,7 @@
   "lint-staged": {
     "*.js": [
       "npm run lint",
-      "pretty-quick — staged",
+      "pretty-quick --staged",
       "git add"
     ]
   },
