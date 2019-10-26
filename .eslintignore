@@ -1,2 +1,2 @@
 dist/*
-src/generated/prisma-client/*
+src/models/*
