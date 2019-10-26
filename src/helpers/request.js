@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 /**
- *
  * @param {string} url A url from a network.
  * @param {object} options Options to config request.
  * See more option here: https://github.com/axios/axios

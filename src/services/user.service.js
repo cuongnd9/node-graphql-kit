@@ -1,4 +1,4 @@
-import { prisma } from '@/generated/prisma-client';
+import { prisma } from '@/models/prisma-client';
 
 function getUsers() {
   return prisma.users();
@@ -12,7 +12,8 @@ function createUser(data) {
   return prisma.createUser(data);
 }
 
-function updateUser(id, data) {
+function updateUser(user) {
+  const { id, ...data } = user;
   return prisma.updateUser({
     where: { id },
     data,
