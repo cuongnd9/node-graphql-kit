@@ -7,10 +7,12 @@
   "author": "Nguyen Duy Cuong <cuongw.me@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/index.js",
-    "start:dev": "nodemon --exec babel-node src/index.js",
-    "deploy": "prisma deploy",
-    "deploy:force": "prisma deploy --force",
+    "start": "dotenv -- node dist/index.js",
+    "start:dev": "dotenv -- nodemon --exec babel-node src/index.js",
+    "prisma:deploy": "dotenv -- prisma deploy",
+    "prisma:deploy:force": "dotenv -- prisma deploy --force",
+    "prisma:reset": "dotenv -- prisma reset",
+    "prisma:delete": "dotenv -- prisma delete",
     "clean": "rm -rf dist",
     "dist": "babel src --out-dir dist",
     "build": "npm run clean  && npm run dist",
@@ -32,12 +34,22 @@
       "pre-commit": "lint-staged"
     }
   },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "graphql-tools": "^4.0.5",
+    "graphql-yoga": "^1.18.3",
+    "lodash": "^4.17.15",
+    "prisma-client-lib": "^1.34.7",
+    "signale": "^1.4.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-plugin-root-import": "^6.4.1",
+    "dotenv-cli": "^3.0.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.1.0",
@@ -51,14 +63,5 @@
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1",
     "prisma": "^1.34.8"
-  },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "dotenv": "^8.0.0",
-    "graphql-tools": "^4.0.5",
-    "graphql-yoga": "^1.18.3",
-    "lodash": "^4.17.15",
-    "prisma-client-lib": "^1.34.7",
-    "signale": "^1.4.0"
   }
 }

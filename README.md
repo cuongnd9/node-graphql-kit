@@ -7,11 +7,11 @@
 
 ## Features
 
-- ESNext
-- GraphQL
-- Prisma
-- PostgreSQL
-- MongoDB
+- Using ESNext
+- Setup Babel, ESLint, Prettier, Ava and Husky.
+- Having Basic authentication and authorization.
+- Setup a basic Apollo Graphql API.
+- Using Prisma and PostgreSQL.
 
 ## Prepare
 
@@ -28,13 +28,17 @@ $ git clone https://github.com/cuongw/node-graphql-boilerplate.git
 $ cd node-graphql-boilerplate && rm -rf .git
 ```
 
-### Step 2: Launch Prisma and the connected database
+### Step 2: Create .env file
+
+Please follow .env.example file.
+
+### Step 3: Launch Prisma and the connected database
 
 ```sh
 $ sudo docker-compose up -d
 ```
 
-### Step 3: Deploy the Prisma datamodel and generate Prisma client
+### Step 4: Deploy the Prisma datamodel and generate Prisma client
 
 ```sh
 $ yarn deploy
