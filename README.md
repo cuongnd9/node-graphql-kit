@@ -59,4 +59,4 @@ $ yarn start
 
 ## License
 
-MIT © [cuongw](https://github.com/cuongw)
+MIT © [103cuong](https://github.com/103cuong)
