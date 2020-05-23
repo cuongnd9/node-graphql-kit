@@ -3,8 +3,3 @@ export const ROLES = {
   manager: 'MANAGER',
   staff: 'STAFF',
 };
-
-export const SEX = {
-  male: 'MALE',
-  female: 'FEMALE',
-};

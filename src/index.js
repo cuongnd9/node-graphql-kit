@@ -1,15 +1,13 @@
-import 'dotenv/config';
-import { GraphQLServer } from 'graphql-yoga';
+import path from 'path';
 import signale from 'signale';
-import schema from './graphql';
+import { migrateDB } from './components/utils';
+import sequelize from './models';
+import app from './app';
 
-// Initialize graphql server.
-const server = new GraphQLServer({ schema });
+const pathToMigration = path.join(__dirname, 'migrations');
 
-// Graphql options.
-const options = {
-  port: process.env.PORT || 9000,
-};
-
-// Start server.
-server.start(options, () => signale.debug(`Server is running on http://localhost:${options.port}`));
+migrateDB(sequelize, pathToMigration)
+  .then(() => {
+    app();
+  })
+  .catch((e) => signale.watch(e));
