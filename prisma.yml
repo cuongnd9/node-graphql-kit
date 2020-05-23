@@ -1,7 +1,0 @@
-endpoint: ${env:PRISMA_ENDPOINT}
-
-datamodel: src/models/datamodel.graphql
-
-generate:
-  - generator: javascript-client
-    output: ./src/models/prisma-client
