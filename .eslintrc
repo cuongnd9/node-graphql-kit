@@ -2,8 +2,7 @@
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:node/recommended-module",
-    "prettier"
+    "plugin:node/recommended-module"
   ],
   "plugins": ["promise", "fp", "import"],
   "rules": {
