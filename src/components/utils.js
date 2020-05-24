@@ -1,31 +1,24 @@
-import jwt from 'jsonwebtoken';
-import Boom from '@hapi/boom';
 import Umzug from 'umzug';
-import config from './config';
+import { get } from 'lodash';
+import { BaseError, ValidationError } from 'sequelize';
+import { AppError, DatabaseError, DatabaseValidationError } from './errors';
 
-export const authenticate = (req, res, next) => {
-  const token = req.body.token || req.query.token || req.headers['x-access-token'];
-  if (!token) {
-    throw Boom.unauthorized('No token provided');
+export const formatError = (error) => {
+  let formattedError = new AppError(error.message || 'Internal Service Error');
+  const originalError = get(error, 'originalError');
+  if (originalError instanceof ValidationError) {
+    formattedError = new DatabaseValidationError(originalError.message);
+  } else if (originalError instanceof BaseError) {
+    formattedError = new DatabaseError(originalError.message);
   }
-  const { secretKey } = config.jwt;
-  try {
-    const decoded = jwt.verify(token, secretKey);
-    req.user = decoded;
-  } catch (err) {
-    throw Boom.unauthorized('Invalid access token');
-  }
-  next();
-};
-
-export const authorize = (...allowed) => {
-  const isAllowed = (role) => allowed.indexOf(role) > -1;
-  return (req, res, next) => {
-    if (req.user && isAllowed(req.user.role)) {
-      next();
-    } else {
-      throw Boom.forbidden('Your role is not allowed');
-    }
+  const {
+    message, locations, path, extensions,
+  } = formattedError;
+  return {
+    message,
+    locations,
+    path,
+    extensions,
   };
 };
 
