@@ -6,6 +6,7 @@
   ],
   "plugins": ["promise", "fp", "import"],
   "rules": {
+    "arrow-parens": ["warn"],
     "no-undef": ["warn"],
     "global-require": ["warn"],
     "max-classes-per-file": ["warn"],

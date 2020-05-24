@@ -15,6 +15,7 @@ const app = () => {
 
   const options = {
     formatError,
+    context: req => ({ ...req }),
     debug: false,
   };
 
