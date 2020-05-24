@@ -34,6 +34,7 @@
     "graphql-scalars": "^1.1.2",
     "graphql-tools": "^4.0.5",
     "graphql-yoga": "^1.18.3",
+    "joi": "^14.3.1",
     "lodash": "^4.17.15",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",

@@ -10,6 +10,7 @@
     "no-undef": ["warn"],
     "global-require": ["warn"],
     "max-classes-per-file": ["warn"],
+    "import/extensions": ["off"],
     "import/no-self-import": ["error"],
     "import/no-cycle": ["error"],
     "import/no-unresolved": ["warn"],
