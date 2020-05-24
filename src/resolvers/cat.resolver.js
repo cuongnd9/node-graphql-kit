@@ -1,3 +1,5 @@
+import joi from 'joi';
+import { middleware, validateSchema } from '../components/middlewares';
 import CatService from '../services/cat.service';
 
 const resolver = {
@@ -7,9 +9,12 @@ const resolver = {
     },
   },
   Mutation: {
-    createCat(_, args) {
-      return CatService.createCat(args);
-    },
+    createCat: middleware(
+      validateSchema({
+        color: joi.string().valid('black', 'white'),
+      }),
+      (_, args) => CatService.createCat(args),
+    ),
   },
 };
 

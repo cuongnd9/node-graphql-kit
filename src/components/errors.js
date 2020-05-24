@@ -26,3 +26,24 @@ export class DatabaseValidationError extends AppError {
     super(message);
   }
 }
+
+export class SchemaValidationError extends BusinessError {
+  constructor(error) {
+    super(error.message);
+    let payload = {};
+    error.details.forEach((item) => {
+      const {
+        path, type, message, context,
+      } = item;
+      payload = {
+        ...payload,
+        [path.toString()]: {
+          message,
+          type,
+          context,
+        },
+      };
+    });
+    this.extensions.payload = payload;
+  }
+}

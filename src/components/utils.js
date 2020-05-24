@@ -1,12 +1,16 @@
 import Umzug from 'umzug';
 import { get } from 'lodash';
 import { BaseError, ValidationError } from 'sequelize';
-import { AppError, DatabaseError, DatabaseValidationError } from './errors';
+import {
+  AppError, DatabaseError, DatabaseValidationError, SchemaValidationError,
+} from './errors';
 
 export const formatError = (error) => {
   let formattedError = new AppError(error.message || 'Internal Service Error');
   const originalError = get(error, 'originalError');
-  if (originalError instanceof ValidationError) {
+  if (originalError instanceof SchemaValidationError) {
+    formattedError = error;
+  } else if (originalError instanceof ValidationError) {
     formattedError = new DatabaseValidationError(originalError.message);
   } else if (originalError instanceof BaseError) {
     formattedError = new DatabaseError(originalError.message);
