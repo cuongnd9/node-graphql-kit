@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { values } from 'lodash';
 import { resolvers as scalarResolvers } from 'graphql-scalars';
 
 let resolvers = [];
@@ -11,7 +12,7 @@ fs
 
     resolvers = [
       ...resolvers,
-      ...Array.from(scalarResolvers),
+      ...values(scalarResolvers),
       resolver.default,
     ];
   });
