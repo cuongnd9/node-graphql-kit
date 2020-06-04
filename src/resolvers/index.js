@@ -3,7 +3,7 @@ import path from 'path';
 import { values } from 'lodash';
 import { resolvers as scalarResolvers } from 'graphql-scalars';
 
-let resolvers = [];
+let resolvers = [...values(scalarResolvers)];
 fs
   .readdirSync(__dirname)
   .filter((fileName) => /resolver.js$/.test(fileName))
@@ -12,7 +12,6 @@ fs
 
     resolvers = [
       ...resolvers,
-      ...values(scalarResolvers),
       resolver.default,
     ];
   });
