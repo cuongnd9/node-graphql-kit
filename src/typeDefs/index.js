@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { typeDefs as scalarTypeDefs } from 'graphql-scalars';
 
-let typeDefs = [];
+let typeDefs = [...scalarTypeDefs];
 fs
   .readdirSync(__dirname)
   .filter((fileName) => /typeDef.js$/.test(fileName))
@@ -11,7 +11,6 @@ fs
 
     typeDefs = [
       ...typeDefs,
-      ...scalarTypeDefs,
       typeDef.default,
     ];
   });
