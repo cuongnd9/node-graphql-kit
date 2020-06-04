@@ -1,9 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { values } from 'lodash';
 import { resolvers as scalarResolvers } from 'graphql-scalars';
 
-let resolvers = [...values(scalarResolvers)];
+let resolvers = [...Array.from(scalarResolvers)];
 fs
   .readdirSync(__dirname)
   .filter((fileName) => /resolver.js$/.test(fileName))
