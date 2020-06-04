@@ -7,8 +7,8 @@
   "author": "Nguyen Duy Cuong <103cuong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "dotenv -- node build/index.js",
-    "start:dev": "dotenv -- nodemon --exec babel-node src/index.js",
+    "start": "node build/index.js",
+    "start:dev": "nodemon --exec babel-node src/index.js",
     "prebuild": "rm -rf build",
     "build": "babel src --out-dir build",
     "lint": "eslint .",
@@ -47,7 +47,6 @@
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "dotenv-cli": "^3.0.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-fp": "^2.3.0",
