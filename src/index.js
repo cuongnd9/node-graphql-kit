@@ -6,8 +6,9 @@ import app from './app';
 
 const pathToMigration = path.join(__dirname, 'migrations');
 
-migrateDB(sequelize, pathToMigration)
-  .then(() => {
-    app();
-  })
-  .catch((e) => signale.watch(e));
+const main = async () => {
+  await migrateDB(sequelize, pathToMigration).catch((e) => signale.watch(e));
+  app();
+};
+
+main();
