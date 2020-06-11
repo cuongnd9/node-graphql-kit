@@ -4,13 +4,15 @@ const typeDef = `
   }
 
   type Mutation {
-    createCat(name: String, color: String): Cat
+    createCat(name: String!, color: String, categoryId: String!): Cat
   }
 
   type Cat {
     id: String
     name: String
     color: String
+    categoryId: String
+    category: Category
     createdAt: DateTime
     updatedAt: DateTime
   }

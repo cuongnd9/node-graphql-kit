@@ -1,14 +1,22 @@
-import Cat from '../models/cat.model';
+import db from '../models';
 
 class CatService {
   static getCats() {
-    return Cat.findAll();
+    return db.Cat.findAll({
+      include: [
+        {
+          model: db.Category,
+          as: 'category',
+        },
+      ],
+    });
   }
 
-  static createCat({ name, color }) {
-    return Cat.create({
+  static createCat({ name, color, categoryId }) {
+    return db.Cat.create({
       name,
       color,
+      categoryId,
     });
   }
 }
