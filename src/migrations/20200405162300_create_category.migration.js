@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
 const migration = {
-  up: (queryInterface) => queryInterface.createTable('cats', {
+  up: (queryInterface) => queryInterface.createTable('categories', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
@@ -10,17 +10,6 @@ const migration = {
     name: {
       type: DataTypes.STRING,
     },
-    color: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    category_id: {
-      type: DataTypes.UUID,
-      references: {
-        model: 'categories',
-        key: 'id',
-      },
-    },
     created_at: {
       type: DataTypes.DATE,
     },
@@ -28,7 +17,7 @@ const migration = {
       type: DataTypes.DATE,
     },
   }),
-  down: (queryInterface) => queryInterface.dropTable('cats'),
+  down: (queryInterface) => queryInterface.dropTable('categories'),
 };
 
 export default migration;

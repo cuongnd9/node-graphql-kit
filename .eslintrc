@@ -4,12 +4,12 @@
     "airbnb-base",
     "plugin:node/recommended-module"
   ],
-  "plugins": ["promise", "fp", "import"],
+  "plugins": ["promise", "import"],
   "rules": {
     "arrow-parens": "warn",
     "no-undef": "off",
     "global-require": "warn",
-    "max-classes-per-file": "warn",
+    "max-classes-per-file": "off",
     "import/extensions": "off",
     "import/no-self-import": "error",
     "import/no-cycle": "error",
@@ -39,10 +39,6 @@
     "promise/avoid-new": "warn",
     "promise/no-new-statics": "error",
     "promise/no-return-in-finally": "warn",
-    "promise/valid-params": "warn",
-    "fp/no-class": "warn",
-    "fp/no-get-set": "warn",
-    "fp/no-loops": "warn",
-    "fp/no-this": "warn"
+    "promise/valid-params": "warn"
   }
 }
