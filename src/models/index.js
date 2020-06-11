@@ -1,8 +1,8 @@
-import path from 'path';
-import fs from 'fs';
-import { Sequelize, DataTypes } from 'sequelize'
+import { Sequelize } from 'sequelize'
 import signale from 'signale'
 
+import Cat from './cat.model';
+import Category from './category.model';
 import config from '../components/config'
 
 const sequelize = new Sequelize({
@@ -25,21 +25,10 @@ sequelize
     process.exit(1)
   })
 
-const models = {};
-
-fs
-  .readdirSync(__dirname)
-  .filter((fileName) => /model.js$/.test(fileName))
-  .forEach(fileName => {
-    const model = require(path.resolve(__dirname, fileName));
-    const formattedFileName = fileName.split('.')[0];
-    const modelName = formattedFileName
-      .replace(/^./, formattedFileName[0].toUpperCase());
-    models[modelName] = model.default;
-  });
+const models = {Cat, Category};
 
 Object.values(models)
-  .forEach(model => model.init(sequelize, DataTypes));
+  .forEach(model => model.init(sequelize));
 
 Object.values(models)
   .filter(model => typeof model.associate === 'function')

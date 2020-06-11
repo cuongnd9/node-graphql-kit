@@ -1,8 +1,8 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 
 class Category extends Model {
-  static init(sequelize, DataTypes) {
-    return super.init({
+  static init(sequelize) {
+    super.init({
       id: {
         type: DataTypes.UUID,
         primaryKey: true,

@@ -1,8 +1,8 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 
 class Cat extends Model {
-  static init(sequelize, DataTypes) {
-    return super.init({
+  static init(sequelize) {
+    super.init({
       id: {
         type: DataTypes.UUID,
         primaryKey: true,
