@@ -9,9 +9,8 @@ export const middleware = (...parameters) => (obj, args, context, info) => {
 };
 
 export const validateSchema = (schema) => (...rest) => {
-  const flattenRest = flatten(rest);
-  const root = flattenRest[0];
-  const args = flattenRest[1];
+  const root = rest[0];
+  const args = rest[1];
   const value = {
     ...root,
     ...args,
