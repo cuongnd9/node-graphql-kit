@@ -5,7 +5,7 @@ import { typeDefs as scalarTypeDefs } from 'graphql-scalars';
 const typeDefs = [...scalarTypeDefs];
 fs
   .readdirSync(__dirname)
-  .filter((fileName) => /typeDef.js$/.test(fileName))
+  .filter((fileName) => /typeDef.js/.test(fileName))
   .forEach((fileName) => {
     const typeDef = require(path.join(__dirname, fileName));
     typeDefs.push(typeDef.default);
