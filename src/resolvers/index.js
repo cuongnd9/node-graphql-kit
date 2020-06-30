@@ -2,17 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import { resolvers as scalarResolvers } from 'graphql-scalars';
 
-let resolvers = [...Array.from(scalarResolvers)];
+const resolvers = [scalarResolvers];
 fs
   .readdirSync(__dirname)
   .filter((fileName) => /resolver.js$/.test(fileName))
   .forEach((fileName) => {
     const resolver = require(path.join(__dirname, fileName));
-
-    resolvers = [
-      ...resolvers,
-      resolver.default,
-    ];
+    resolvers.push(resolver.default);
   });
 
 export default resolvers;
