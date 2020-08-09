@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import signale from 'signale'
+import { logger } from 'juno-js';
 
 import Cat from './cat.model';
 import Category from './category.model';
@@ -21,8 +21,8 @@ const sequelize = new Sequelize({
 sequelize
   .authenticate()
   .catch(e => {
-    signale.watch(e)
-    process.exit(1)
+    logger().error(e);
+    process.exit(1);
   })
 
 const models = {Cat, Category};

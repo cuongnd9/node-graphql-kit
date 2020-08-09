@@ -1,6 +1,7 @@
 import { GraphQLServer } from 'graphql-yoga';
 import { makeExecutableSchema } from 'graphql-tools';
-import signale from 'signale';
+import { logger } from 'juno-js';
+
 import { formatError } from './components/utils';
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
@@ -18,7 +19,7 @@ const app = () => {
     debug: false,
   };
 
-  server.start(options, ({ port }) => signale.watch(`Server is running on http://127.0.0.1:${port}`));
+  server.start(options, ({ port }) => logger().info(`Server is running on http://127.0.0.1:${port}`));
 };
 
 export default app;
