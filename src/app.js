@@ -19,7 +19,7 @@ const app = () => {
     debug: false,
   };
 
-  server.start(options, ({ port }) => logger().info(`Server is running on http://127.0.0.1:${port}`));
+  server.start(options, ({ port }) => logger.info(`Server is running on http://127.0.0.1:${port}`));
 };
 
 export default app;

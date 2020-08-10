@@ -21,7 +21,7 @@ const sequelize = new Sequelize({
 sequelize
   .authenticate()
   .catch(e => {
-    logger().error(e);
+    logger.error('sequelize authentication error', e);
     process.exit(1);
   })
 
